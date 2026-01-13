@@ -1,5 +1,5 @@
 <?php 
-private class Terrestre extends Criatura{
+class Terrestre extends Criatura{
     private $tipoTerreno;
 
     public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus){

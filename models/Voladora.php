@@ -1,5 +1,5 @@
 <?php 
-private class Voladora extends Criatura{
+class Voladora extends Criatura{
     private $envergaduraAlas;
 
     public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus){

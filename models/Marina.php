@@ -1,5 +1,5 @@
 <?php 
-private class Marina extends Criatura{
+class Marina extends Criatura{
     private $profundidadMax;
 
     public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus){
