@@ -20,7 +20,7 @@ class Gestor{
             return null;
         }
     }
-    public function editar($nombre, $especie, $nivelPeligrosidad, $healthStatus){
+    public function editar($nivelPeligrosidad, $healthStatus){
         foreach ($_SESSION['criaturas'] as $p) {
             if ($p -> getNombre() == $nombre) {
                 $p ->setEspecie($especie);
@@ -34,8 +34,7 @@ class Gestor{
         foreach ($_SESSION['criaturas'] as $i => $p) {
             if ($p->getId() == $p) {
                 unset($_SESSION['criaturas'][$i]);
-                $_SESSION['criaturas'] = array_values($_SESSION['criaturas'])
-                ;}
+                $_SESSION['criaturas'] = array_values($_SESSION['criaturas']);}
                 return true;
         }
         return false;

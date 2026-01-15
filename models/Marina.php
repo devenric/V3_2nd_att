@@ -6,7 +6,7 @@ class Marina extends Criatura{
         parent::__contruct($nombre, $especie, $nivelPeligrosidad, $healthStatus);
         $this->profundidadMax = $profundidadMax;}
         
-    function getprofundidadMax(){return $this->profundidadMax:}
+    function getprofundidadMax(){return $this->profundidadMax;}
     function setprofundidadMax(){return $this->profundidadMax = $profundidadMax;}
 }
 ?>

@@ -1,9 +1,9 @@
 <?php
-protected class Criatura{ //declaración Clase
-    private $nombre;
-    private $especie;
-    private $nivelPeligrosidad;
-    private $ealthStatus;
+class Criatura{ //declaración Clase
+    protected $nombre;
+    protected $especie;
+    protected $nivelPeligrosidad;
+    protected $healthStatus;
 
 public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus){ //construct
     $this->nombre = $nombre;
