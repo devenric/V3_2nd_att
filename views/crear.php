@@ -2,6 +2,15 @@
 <html>
 <head>
     <title>Añadir Criatura</title>
+    <script>
+        function mostrarCampos() {
+            const tipo = document.getElementById('tipo').value;
+            document.getElementById('marina').style.display = tipo === 'Marina' ? 'block' : 'none';
+            document.getElementById('voladora').style.display = tipo === 'Voladora' ? 'block' : 'none';
+            document.getElementById('terrestre').style.display = tipo === 'Terrestre' ? 'block' : 'none';
+        }
+        window.onload = mostrarCampos;
+    </script>
 </head>
 <body>
     <h1>Añadir Criatura</h1>
@@ -15,25 +24,28 @@
         <input type="text" name="nivelPeligrosidad" required><br><br>
         Estado de Salud:<br>
         <input type="text" name="healthStatus" required><br><br>
-        <select name="tipo" id="tipo">
-            <option value="Marina" >Marina</option>
+        Tipo:<br>
+        <select name="tipo" id="tipo" onchange="mostrarCampos()">
+            <option value="Marina">Marina</option>
             <option value="Voladora">Voladora</option>
             <option value="Terrestre">Terrestre</option>
-        </select>
+        </select><br><br>
 
-        <?php if ($criatura instanceof Marina): ?>
-    <div class="marina">
-        <label>Profundidad Máxima:</label>
-        <input type="number" name="profundidadMax" value="<?= $criatura->profundidadMax ?>">
-    </div>
+        <div id="marina" style="display:none;">
+            <label>Profundidad Máxima:</label>
+            <input type="number" name="profundidadMax" value="0"><br><br>
+        </div>
 
-<?php elseif ($criatura instanceof Terrestre): ?>
-    <div class="terrestre">
-        <label>Tipo de Terreno:</label>
-        <input type="text" name="tipoTerreno" value="<?= $criatura->tipoTerreno ?>">
-    </div>
+        <div id="voladora" style="display:none;">
+            <label>Envergadura de Alas:</label>
+            <input type="number" name="envergaduraAlas" value="0"><br><br>
+        </div>
 
-<?php endif; ?>
+        <div id="terrestre" style="display:none;">
+            <label>Tipo de Terreno:</label>
+            <input type="text" name="tipoTerreno"><br><br>
+        </div>
+
         <button type="submit">Guardar</button>
     </form>
 

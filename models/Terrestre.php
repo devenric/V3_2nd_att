@@ -2,11 +2,11 @@
 class Terrestre extends Criatura{
     private $tipoTerreno;
 
-    public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus){
-        parent::__contruct($nombre, $especie, $nivelPeligrosidad, $healthStatus);
+    public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus, $tipoTerreno){
+        parent::__construct($nombre, $especie, $nivelPeligrosidad, $healthStatus);
         $this->tipoTerreno = $tipoTerreno;}
         
-    function getprofundidadMax(){return $this->tipoTerreno:}
+    function gettipoTerreno(){return $this->tipoTerreno;}
     function setprofundidadMax(){return $this->tipoTerreno = $tipoTerreno;}
 }
 ?>

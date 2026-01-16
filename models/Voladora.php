@@ -2,11 +2,11 @@
 class Voladora extends Criatura{
     private $envergaduraAlas;
 
-    public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus){
-        parent::__contruct($nombre, $especie, $nivelPeligrosidad, $healthStatus);
+    public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus, $envergaduraAlas){
+        parent::__construct($nombre, $especie, $nivelPeligrosidad, $healthStatus);
         $this->envergaduraAlas = $envergaduraAlas;}
         
-    function getprofundidadMax(){return $this->envergaduraAlas:}
-    function setprofundidadMax(){return $this->envergaduraAlas = $envergaduraAlas;}
+    function getenvergaduraAlas(){return $this->envergaduraAlas;}
+    function setenvergaduraAlas($envergaduraAlas){return $this->envergaduraAlas = $envergaduraAlas;}
 }
 ?>

@@ -11,11 +11,7 @@
         <input type="text" name="nivelPeligrosidad" required><br><br>
         Estado de Salud:<br>
         <input type="text" name="healthStatus" required><br><br>
-        <select name="tipo" id="tipo"></select>
-            <option value="Terrestre" >Terrestre</option>
-            <option value="Voladora">Voladora</option>
-            <option value="Marina">Marina</option>
-        </select>
+        
 
         <button type="submit">Actualizar</button>
     </form>

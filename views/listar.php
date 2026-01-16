@@ -6,24 +6,26 @@
 <body>
     <h1>Criaturas</h1>
 
-    <a href="index.php?accion=crear">Agregar Producto</a>
-<?php if (isset($criaturas) && empty($criaturas)):?>
+    <a href="index.php?accion=crear">Agregar Criatura</a>
+<?php if (isset($criaturas) && !empty($criaturas)):?>
     <table border="1" cellpadding="10">
         <tr>
-            <th>ID</th>
             <th>Nombre</th>
-            <th>Formato</th>
+            <th>Especie</th>
+            <th>Nivel Peligrosidad</th>
+            <th>Salud</th>
             <th>Acciones</th>
         </tr>
         <?php foreach ($criaturas as $p): ?>
         <tr>
-            <td><?= $p->getId() ?></td>
             <td><?= $p->getNombre() ?></td>
-            <td><?= $p->getFormato() ?></td>
+            <td><?= $p->getEspecie() ?></td>
+            <td><?= $p->getNivelPeligrosidad() ?></td>
+            <td><?= $p->getHealthStatus() ?></td>
             <td>
-                <a href="index.php?accion=editar&id=<?= $p->getId() ?>">Editar</a>
+                <a href="index.php?accion=editar&nombre=<?= $p->getNombre() ?>">Editar</a>
                 |
-                <a href="index.php?accion=eliminar&id=<?= $p->getId() ?>">Eliminar</a>
+                <a href="index.php?accion=eliminar&nombre=<?= $p->getNombre() ?>">Eliminar</a>
             </td>
         </tr>
         <?php endforeach; ?>

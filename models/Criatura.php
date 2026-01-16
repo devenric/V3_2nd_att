@@ -1,5 +1,5 @@
 <?php
-class Criatura{ //declaración Clase
+abstract class Criatura{ //declaración Clase
     protected $nombre;
     protected $especie;
     protected $nivelPeligrosidad;
@@ -19,6 +19,17 @@ public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus
     public function setNombre($nombre){return $this->nombre = $nombre;}
     public function setEspecie($especie){return $this->especie = $especie;}
     public function setNivelPeligrosidad($nivelPeligrosidad){return $this->nivelPeligrosidad = $nivelPeligrosidad;}
-    public function setHealthStatus($healthStatus){return $this->HealthStatus = $healthStatus;}
-}
+    public function setHealthStatus($healthStatus){return $this->healthStatus = $healthStatus;}
+    
+    abstract public function hacerSonido();
+    public function validarPeligrosidad($danger){
+        if ($danger >= 10 || $danger >= 0) {
+            echo "La peligrosidad no ha de ser superior a 10 o inferior a 0";    
+        return false;
+        else {
+            return true;
+            }
+        }
+    }
+    }
 ?>
