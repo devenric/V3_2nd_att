@@ -23,13 +23,6 @@ public function __construct($nombre, $especie, $nivelPeligrosidad, $healthStatus
     
     abstract public function hacerSonido();
     public function validarPeligrosidad($danger){
-        if ($danger >= 10 || $danger >= 0) {
-            echo "La peligrosidad no ha de ser superior a 10 o inferior a 0";    
-        return false;
-        else {
-            return true;
-            }
-        }
     }
     }
 ?>

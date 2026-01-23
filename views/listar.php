@@ -30,7 +30,10 @@
         </tr>
         <?php endforeach; ?>
     </table>
-    <?php else:?>
+    <?php for ($i=1; $i<=$totalPaginas ; $i++):?>
+        <a href="index.php?p=<?= $i ?>"><?= $i ?></a>
+        <?php endfor;?>
+        <?else :?>
         <p>Aún no hay criaturas registradas</p>
     <?php endif; ?>
 </body>

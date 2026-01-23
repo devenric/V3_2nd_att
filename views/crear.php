@@ -46,7 +46,7 @@
             <input type="text" name="tipoTerreno"><br><br>
         </div>
 
-        <button type="submit">Guardar</button>
+        <input type="submit"></input>
     </form>
 
     <br>

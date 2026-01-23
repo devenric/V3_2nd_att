@@ -4,13 +4,19 @@ class CriaturaController {
 
     private $gestor;
 
-    public function __construct() {
-        $this->gestor = new Gestor();
+    public function __construct(InterfazCrud $gestor) {
+        $this->gestor = $gestor;
     }
 
     public function index() {
-        $criaturas = $this->gestor->listar();
-        include "views/listar.php";
+    $Elempagina = 5;
+    $paginaActual = isset($_GET['p']) ? (int)$_GET['p'] : 1;
+    $listaTotal = $this->gestor->listar();
+    $totalElementos = count($listaTotal);
+    $totalPaginas = ceil($totalElementos/$Elempagina);
+    $primerElemento = ($paginaActual-1) * $Elempagina;
+    $criaturas = array_slice($listaTotal, $primerElemento, $Elempagina);
+    include "views/listar.php";
     }
 
     public function crear() {
@@ -18,10 +24,8 @@ class CriaturaController {
             $nombre = $_POST['nombre'];
             $especie = $_POST['especie'];
             $nivelPeligrosidad = $_POST['nivelPeligrosidad'];
-            validarPeligrosidad($nivelPeligrosidad);
             $healthStatus = $_POST['healthStatus'];
             $tipo = $_POST['tipo'];
-            
             if ($tipo === 'Marina') {
                 $profundidadMax = $_POST['profundidadMax'] ?? 0;
                 $criatura = new Marina($nombre, $especie, $nivelPeligrosidad, $healthStatus, $profundidadMax);

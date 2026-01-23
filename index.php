@@ -2,7 +2,9 @@
 require_once "autoload.php";
 session_start();
 
-$controller = new CriaturaController();
+$migestor = new GestorAlter(); //creo un gestor 
+
+$controller = new CriaturaController($migestor);
 
 $accion = $_GET['accion'] ?? 'index';
 

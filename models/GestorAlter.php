@@ -1,6 +1,6 @@
 <?php
 require_once 'autoload.php';
-class Gestor implements InterfazCrud{
+class GestorAlter implements InterfazCrud{
     public function __construct(){
         if (!isset($_SESSION['criaturas'])) {
             $_SESSION['criaturas'] = [];

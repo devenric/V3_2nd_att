@@ -11,9 +11,7 @@
         <input type="text" name="nivelPeligrosidad" required><br><br>
         Estado de Salud:<br>
         <input type="text" name="healthStatus" required><br><br>
-        
-
-        <button type="submit">Actualizar</button>
+        <input type="submit">Actualizar</input>
     </form>
 
     <br>

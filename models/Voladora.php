@@ -8,5 +8,8 @@ class Voladora extends Criatura{
         
     function getenvergaduraAlas(){return $this->envergaduraAlas;}
     function setenvergaduraAlas($envergaduraAlas){return $this->envergaduraAlas = $envergaduraAlas;}
+    function hacerSonido(){
+        return "$this->nombre dice: ¡Miau!";
+    }
 }
 ?>

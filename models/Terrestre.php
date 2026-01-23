@@ -8,5 +8,8 @@ class Terrestre extends Criatura{
         
     function gettipoTerreno(){return $this->tipoTerreno;}
     function setprofundidadMax(){return $this->tipoTerreno = $tipoTerreno;}
+    function hacerSonido(){
+        return "$this->nombre dice: ¡Miau!";
+    }
 }
 ?>
